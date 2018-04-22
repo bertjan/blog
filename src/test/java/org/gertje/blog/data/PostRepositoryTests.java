@@ -52,7 +52,7 @@ public class PostRepositoryTests {
 		List<Post> read = postRepository.findByTagListValue("a");
 
 		// then we should find it.
-		assertThat(read.size()).isEqualTo(0);
+		assertThat(read.size()).isEqualTo(1);
 		Post first = read.get(0);
 		assertThat(first.getContent()).isEqualTo(post.getContent());
 	}
