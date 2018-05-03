@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.CascadeType;
 import java.util.List;
 
 @Entity
@@ -25,7 +26,7 @@ public class Post {
 	@Column(length = 3000)
 	private String content;
 
-	@ManyToMany
+	@ManyToMany(cascade = {CascadeType.ALL})
 	private List<Tag> tagList;
 
 	@OneToMany
